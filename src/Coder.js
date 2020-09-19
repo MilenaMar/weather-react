@@ -6,10 +6,10 @@ export default function Coder() {
     <div className="Coder">
       Coded by
       <a
-        href="https://www.linkedin.com/in/milena-martinez-caceres-380729ab/"
+        href="https://github.com/MilenaMar/weather-react"
         target="_blank"
         rel="noopener noreferrer"
-      >
+      >y
         {" "}
         Milena Martinez{" "}
       </a>
