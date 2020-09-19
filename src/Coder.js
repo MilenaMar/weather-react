@@ -9,7 +9,7 @@ export default function Coder() {
         href="https://github.com/MilenaMar/weather-react"
         target="_blank"
         rel="noopener noreferrer"
-      >y
+      >
         {" "}
         Milena Martinez{" "}
       </a>
