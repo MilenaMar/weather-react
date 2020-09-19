@@ -1,0 +1,17 @@
+.App {
+  background-color: transparent;
+  color: #142850;
+  display: block;
+  font-family: "Saira Condensed", sans-serif;
+  margin: 0 auto;
+  padding-top: 30px;
+  text-align: center;
+  width: 800px;
+}
+
+.App .header {
+  background-color: #dae1e7;
+  box-shadow: -7px 3px 14px #142a4d;
+  border-width: thick;
+  border-radius: 50px;
+}
