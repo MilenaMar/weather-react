@@ -3,7 +3,6 @@ import "./App.css";
 import Form from "./Form";
 import CurrentCity from "./CurrentCity";
 import Forecast from "./Forecast";
-import Coder from "./Coder";
 
 export default function App() {
   return (
@@ -21,8 +20,17 @@ export default function App() {
           </div>
         </div>
       </div>
-      <Coder />
+      <div className="Coder">
+        <i class="fab fa-github"></i> Coded by
+        <a
+          href="https://github.com/MilenaMar/weather-react"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {" "}
+          Milena Martinez{" "}
+        </a>
+      </div>
     </div>
   );
 }
-
