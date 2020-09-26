@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CurrentCity from "./CurrentCity";
 import Forecast from "./Forecast";
 
+
 export default function App() {
   return (
     <div className="App">
@@ -17,7 +18,7 @@ export default function App() {
           </div>
         </div>
         <div className="Coder">
-          <i className="fab fa-github"></i>
+          <i className="fa-github"></i>
           <a
             href="https://github.com/MilenaMar/weather-react"
             target="_blank"
