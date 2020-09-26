@@ -18,7 +18,7 @@ export default function App() {
           </div>
         </div>
         <div className="Coder">
-          <i className="fa-github"></i>
+          <i className="fab fa-github"></i>
           <a
             href="https://github.com/MilenaMar/weather-react"
             target="_blank"
