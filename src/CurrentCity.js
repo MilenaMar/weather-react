@@ -1,47 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CurrentCity.css";
+import axios from "axios";
 
 export default function CurrentCity() {
-  let weatherData = {
-    city: "Dublin",
-    currentTemperature: 19,
-    currentdate: "28/08/2020",
-    humidity: 30,
-    wind: 6,
-    currentTime: "18:00",
-    description: "Clear Sky",
-  };
-  return (
-    <div className="Current-city-information">
-      <div className="container">
-        <div className="row justify-content-md-center">
-          <div className="col-sm">
-            <div className="current-precipitation-wind">
-              <span> Humidity: {weatherData.humidity}%</span>
-              <br />
-              <span>Wind: {weatherData.wind} km/h</span>
-              <br />
-              <span>{weatherData.description}</span>
+  const [onLoad, setOnload] = useState(false);
+  const [weatherData, setWeatherData] = useState({});
+
+  function handleResponse(response) {
+    setWeatherData({
+      temperature: Math.round(response.data.main.temp),
+      humidity: response.data.main.humidity,
+      description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
+      wind: response.data.wind.speed,
+      city: response.data.name,
+    });
+
+    setOnload(true);
+  }
+
+  if (onLoad) {
+    return (
+      <div className="Current-city-information">
+        <div className="container">
+          <div className="row justify-content-md-center">
+            <div className="col-sm">
+              <div className="current-precipitation-wind">
+                <span> Humidity: {weatherData.humidity}%</span>
+                <br />
+                <span>Wind: {weatherData.wind} km/h</span>
+                <br />
+                <span>{weatherData.description}</span>
+              </div>
             </div>
-          </div>
-          <div className="col-sm">
-            <h1>{weatherData.city}</h1>
-            <h2>{weatherData.currentdate}</h2>
-            <h3>
-              <span className="actual-temp">
-                {weatherData.currentTemperature}
-              </span>
-              <span className="celsius">°C</span>/
-              <span className="fahrenheit">°F</span>
-              <br />
-              <i className="fas fa-cloud-moon-rain icon-current"></i>
-            </h3>
-          </div>
-          <div className="col-sm">
-            <div className="current-time">{weatherData.currentTime}</div>
+            <div className="col-sm">
+              <h1>{weatherData.city}</h1>
+              <h2>26/09/2020</h2>
+              <h3>
+                <span className="actual-temp">{weatherData.temperature}</span>
+                <span className="celsius">°C</span>/
+                <span className="fahrenheit">°F</span>
+                <br />
+                <i className="fas fa-cloud-moon-rain icon-current"></i>
+              </h3>
+            </div>
+            <div className="col-sm">
+              <div className="current-time">18:00</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    let apikey = "3a94f3778290bfeee61278505dbbe51d";
+    let city = "Dublin";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return "Loading...";
+  }
 }
