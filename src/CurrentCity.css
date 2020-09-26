@@ -1,16 +1,4 @@
-.Current-city-information {
-  border-radius: 20px;
-  margin: 25px;
-  margin-bottom: -24px;
-  margin-top: 0;
-  line-height: 20px;
-}
 
-h1,
-h2 {
-  margin: 0;
-  padding: 0;
-}
 h1 {
   font-size: 80px;
 }
@@ -31,24 +19,16 @@ h3 {
 .icon-current {
   color: #142850;
   font-size: 119px;
-  margin: 0;
-  margin-top: 9px;
-  padding: 0;
 }
 .current-precipitation-wind {
-  text-align: justify;
-  font-size: 20px;
-  position: relative;
-  right: -12px;
-  top: -329px;
-  width: fit-content;
+  text-align: left;
+  font-size: 23px;
+  padding-top: 20px;
 }
 .current-time {
-  font-size: 20px;
-  position: relative;
-  right: -690px;
-  top: -372px;
-  width: fit-content;
+  font-size: 23px;
+  text-align: right;
+  padding-top: 20px;
 }
 
 .fahrenheit:hover {

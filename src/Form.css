@@ -1,18 +1,12 @@
-form {
-  margin-top: -18px;
-  margin-bottom: 0;
-  margin-left: 56px;
+.container {
+  padding-top: 20px;
 }
-
 .new-city-search {
   background-color: #dae1e7;
   border: none;
   border-radius: 10px;
   box-shadow: 1px 1px 11px #394989;
   font-size: 27px;
-  margin-bottom: 20px;
-  margin-right: 23px;
-  text-align: center;
 }
 .my-location-button {
   border: unset;
@@ -29,11 +23,6 @@ form {
   border-radius: 53px;
   color: #dae1e7;
   font-size: 41px;
-  text-align: justify;
-  position: relative;
-  right: 179px;
-  top: 29px;
-  width: fit-content;
 }
 .fa-map-marked-alt:hover {
   cursor: pointer;
