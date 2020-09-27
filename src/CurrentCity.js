@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import "./CurrentCity.css";
 import axios from "axios";
+import FormatDate from "./FormatDate";
+import FormatTime from "./FormatTime";
 
 export default function CurrentCity() {
   const [onLoad, setOnload] = useState(false);
   const [weatherData, setWeatherData] = useState({});
 
   function handleResponse(response) {
+    console.log(response);
     setWeatherData({
       temperature: Math.round(response.data.main.temp),
       humidity: response.data.main.humidity,
+      date: new Date(response.data.dt*1000),
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
@@ -35,7 +39,7 @@ export default function CurrentCity() {
             </div>
             <div className="col-sm">
               <h1>{weatherData.city}</h1>
-              <h2>26/09/2020</h2>
+              <h2> <FormatDate date={weatherData.date} /></h2>
               <h3>
                 <span className="actual-temp">{weatherData.temperature}</span>
                 <span className="celsius">°C</span>/
@@ -45,7 +49,7 @@ export default function CurrentCity() {
               </h3>
             </div>
             <div className="col-sm">
-              <div className="current-time">18:00</div>
+              <div className="current-time"><FormatTime/></div>
             </div>
           </div>
         </div>

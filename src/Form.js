@@ -1,6 +1,5 @@
 import React from "react";
 import "./Form.css";
-import axios from "axios";
 
 
 export default function Form() {
