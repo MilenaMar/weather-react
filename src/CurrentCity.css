@@ -24,11 +24,13 @@ h3 {
   text-align: left;
   font-size: 23px;
   padding-top: 20px;
+  padding-left: 20px;
 }
 .current-time {
   font-size: 23px;
   text-align: right;
   padding-top: 20px;
+  padding-right: 20px;
 }
 
 .fahrenheit:hover {

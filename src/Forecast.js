@@ -3,7 +3,7 @@ import "./Forecast.css";
 
 export default function Forecast(props) {
   return (
-    <div className="container">
+    <div className="forecast">
       <div className="row">
         <div className="col-sm">
           {props.day}
