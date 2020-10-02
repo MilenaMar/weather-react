@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="header">
-        <APICall/>
+        <APICall defaultcity="dublin"/>
         <Forecast day="Monday" tempmax={7} tempmin={2} />
       </div>
       <div className="Coder">

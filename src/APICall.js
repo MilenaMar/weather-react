@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import CurrentCity from "./CurrentCity";
 import "./APICall.css";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-export default function APICall() {
+export default function APICall(props) {
   const [onLoad, setOnload] = useState(false);
   const [weatherData, setWeatherData] = useState({});
+  const [city, setCity]= useState (props.defaultcity);
 
   function handleResponse(response) {
     setWeatherData({
@@ -19,6 +21,20 @@ export default function APICall() {
     });
     setOnload(true);
   }
+  function search(){
+let apikey = "3a94f3778290bfeee61278505dbbe51d";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+  function handleSubmit(event){
+    event.preventDefault();
+    search();
+
+  }
+  function handleChange (event){
+setCity(event.target.value);
+  }
+
   if (onLoad) {
     return (
       <div className="form">
@@ -27,11 +43,11 @@ export default function APICall() {
             <i className="fas fa-map-marked-alt"></i>
           </div>
           <div className="col-sm">
-            <form>
+            <form onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder="Search for a new City"
-                className="new-city-search"
+                className="new-city-search" onChange={handleChange}
               />
             </form>
           </div>
@@ -44,10 +60,7 @@ export default function APICall() {
     );
         } 
         else {
-    let apikey = "3a94f3778290bfeee61278505dbbe51d";
-    let city = "Dublin";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    search();
     return "Loading...";
   }
 }
