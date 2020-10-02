@@ -2,6 +2,7 @@ import React from "react";
 import "./CurrentCity.css";
 import FormatDate from "./FormatDate";
 import FormatTime from "./FormatTime";
+import Icon from "./Icon";
 
 export default function CurrentCity(props) {
    return (
@@ -27,7 +28,9 @@ export default function CurrentCity(props) {
              <span className="celsius">°C</span>/
              <span className="fahrenheit">°F</span>
              <br />
-             <i className="fas fa-cloud-moon-rain icon-current"></i>
+             <div className="icon-current">
+               <Icon iconData={props.data.icon}/>
+               </div>
            </h3>
          </div>
          <div className="col-sm">

@@ -17,8 +17,7 @@ h3 {
   opacity: 75%;
 }
 .icon-current {
-  color: #142850;
-  font-size: 119px;
+ margin-top: 5px;
 }
 .current-precipitation-wind {
   text-align: left;

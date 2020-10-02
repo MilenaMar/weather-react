@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import CurrentCity from "./CurrentCity";
 import "./APICall.css";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 
 export default function APICall(props) {
   const [onLoad, setOnload] = useState(false);
