@@ -9,16 +9,13 @@ h2 {
 h3 {
   font-weight: bolder;
   font-size: 40px;
-  margin: 10px;
-  padding: 10px;
 }
-.fahrenheit {
-  text-decoration: underline;
-  opacity: 75%;
+.icon-current canvas {
+width: 119px;
+ margin-top:-25px;
+ margin-bottom: 18px;
 }
-.icon-current {
- margin-top: 5px;
-}
+
 .current-precipitation-wind {
   text-align: left;
   font-size: 23px;
@@ -32,11 +29,3 @@ h3 {
   padding-right: 20px;
 }
 
-.fahrenheit:hover {
-  cursor: pointer;
-  opacity: 100%;
-}
-.celsius:hover {
-  cursor: pointer;
-  opacity: 100%;
-}

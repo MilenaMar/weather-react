@@ -7,22 +7,17 @@
   border-radius: 10px;
   box-shadow: 1px 1px 11px #394989;
   font-size: 27px;
+  width: 402px;
+  text-align: center;
 }
-.my-location-button {
+.search-button {
   border: unset;
   box-shadow: 1px 1px 2px #142850;
   background-color: #142850;
   border-radius: 30px;
   color: #dae1e7;
   font-size: 30px;
-}
-.fa-map-marked-alt {
-  border: unset;
-  box-shadow: 1px 1px 2px #142850;
-  background-color: #142850;
-  border-radius: 53px;
-  color: #dae1e7;
-  font-size: 41px;
+  padding-right:10px;
 }
 .fa-map-marked-alt:hover {
   cursor: pointer;

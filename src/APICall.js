@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import CurrentCity from "./CurrentCity";
 import "./APICall.css";
-
+import Forecast from "./Forecast";
 
 export default function APICall(props) {
   const [onLoad, setOnload] = useState(false);
@@ -18,11 +18,12 @@ export default function APICall(props) {
       icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
       city: response.data.name,
+      coord: response.data.coord,
     });
     setOnload(true);
   }
   function search(){
-let apikey = "3a94f3778290bfeee61278505dbbe51d";
+let apikey = "efbf5a265d13ac2f1fb415e1a6ff2cab";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -39,10 +40,7 @@ setCity(event.target.value);
     return (
       <div className="form">
         <div className="row justify-content-md-center">
-          <div className="col-sm">
-            <i className="fas fa-map-marked-alt"></i>
-          </div>
-          <div className="col-sm">
+          <div className="col-sm-8">
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
@@ -52,10 +50,11 @@ setCity(event.target.value);
             </form>
           </div>
           <div className="col-sm">
-            <input type="submit" value="Go" className="my-location-button" />
+            <input type="submit" value="Submit" className="search-button" onClick={handleSubmit} />
           </div>
         </div>
         <CurrentCity data={weatherData} />
+        <Forecast data={weatherData} />
       </div>
     );
         } 

@@ -3,6 +3,7 @@ import "./CurrentCity.css";
 import FormatDate from "./FormatDate";
 import FormatTime from "./FormatTime";
 import Icon from "./Icon";
+import CurrentTemperature from "./CurrentTemperature";
 
 export default function CurrentCity(props) {
    return (
@@ -24,9 +25,7 @@ export default function CurrentCity(props) {
              <FormatDate date={props.data.date} />
            </h2>
            <h3>
-             <span className="actual-temp">{props.data.temperature}</span>
-             <span className="celsius">°C</span>/
-             <span className="fahrenheit">°F</span>
+             <CurrentTemperature data={props.data.temperature}/>
              <br />
              <div className="icon-current">
                <Icon iconData={props.data.icon}/>
