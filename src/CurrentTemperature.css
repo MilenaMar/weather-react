@@ -1,5 +1,6 @@
 .fahrenheit {
   font-size: 30px;
+  opacity: 0.7;
 }
 .celsius {
   font-size: 30px;
@@ -8,12 +9,11 @@
   color: #142850;
   font-size: 40px;
   text-decoration: underline;
+  opacity: 1;
 }
 .fahrenheit:hover {
   cursor: pointer;
-  opacity: 100%;
 }
 .celsius:hover {
   cursor: pointer;
-  opacity: 100%;
 }
