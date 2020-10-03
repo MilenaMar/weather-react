@@ -8,7 +8,6 @@
 .active {
     color:#142850;
     font-size: 40px;
-    opacity: 100%;
 }
 .fahrenheit:hover {
   cursor: pointer;
