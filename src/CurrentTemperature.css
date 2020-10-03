@@ -1,13 +1,13 @@
-.fahrenheit{
-  opacity: 75%;
+.fahrenheit {
   font-size: 30px;
 }
 .celsius {
-  font-size: 30px; 
+  font-size: 30px;
 }
 .active {
-    color:#142850;
-    font-size: 40px;
+  color: #142850;
+  font-size: 40px;
+  text-decoration: underline;
 }
 .fahrenheit:hover {
   cursor: pointer;
